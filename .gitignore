@@ -1,0 +1,7 @@
+*.json
+.gcp/
+.env
+__pycache__/
+*.pyc
+.venv/
+data/raw/
