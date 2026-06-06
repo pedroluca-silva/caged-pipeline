@@ -22,7 +22,8 @@ def transformar_caged (df):
     )
 
     df["salario"] = df["salario"].fillna(0)
-    df["idade"] =  df["salario"].fillna(0)
+    df["salario"] = df["salario"].astype(str).str.replace(",",".").astype(float)
+    df["idade"] = pd.to_numeric(df["idade"], errors="coerce").fillna(0)
 
     df["municipio"] = df["municipio"].astype(str)
     df["cbo_ocupacao"] = df["cbo_ocupacao"].astype(str)
